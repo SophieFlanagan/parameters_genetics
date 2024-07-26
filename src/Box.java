@@ -14,11 +14,12 @@ public class Box<T> {
         this.storedValue = storedValue;
     }
 
-    public static <T> T castValue(Object o, Class<T> storedValue) {
-        try {
-            return storedValue.cast(o);
-        } catch (ClassCastException e) {
-            return null;
+    public <U> T castValue(U input) {
+        T castedBox = ((T) input);
+        if (input instanceof Box) {
+            return castedBox;
+        } else {
+            throw new ClassCastException("Error. Try Again!");
         }
     }
 
