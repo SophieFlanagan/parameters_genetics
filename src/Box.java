@@ -2,6 +2,10 @@ public class Box<T> {
 
     private T storedValue;
 
+    public Box(T storedValue) {
+        this.storedValue = storedValue;
+    }
+
     public T getStoredValue(){
         return storedValue;
     }
@@ -10,16 +14,12 @@ public class Box<T> {
         this.storedValue = storedValue;
     }
 
-
-    public static <T> T castValue()
-
-   /* public static <T> T convertInstanceOfObject(Object o, Class<T> clazz) {
+    public static <T> T castValue(Object o, Class<T> storedValue) {
         try {
-            return clazz.cast(o);
-        } catch(ClassCastException e) {
+            return storedValue.cast(o);
+        } catch (ClassCastException e) {
             return null;
         }
-    }*/
-
+    }
 
 }
